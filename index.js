@@ -3,7 +3,7 @@
 const canvas = document.getElementById("xorCanvas");
 const ctx = canvas.getContext("2d");
 ctx.fillRect(0, 0, canvas.width, canvas.height);
-const model = tf.sequential();
+
 const train_xs = tf.tensor2d([
     [0, 0],
     [0, 1],
@@ -16,6 +16,7 @@ const train_ys_or = tf.tensor2d([0, 1, 1, 1], [4, 1]);
 //train_xs.print();
 //train_ys.print();
 //fc hidden layer
+const model = tf.sequential();
 model.add(
     tf.layers.dense({
         inputShape: [2],
